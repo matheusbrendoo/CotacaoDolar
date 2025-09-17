@@ -5,7 +5,7 @@ import { Cotacao } from '../models/cotacao';
 
 @Injectable({ providedIn: 'root' })
 export class CotacaoDolarService {
-  private apiServerUrl = 'http://localhost:8080/api';
+  private apiServerUrl = 'https://sistemacotacaodolar.onrender.com/api';
 
   constructor(private http: HttpClient) {}
 
