@@ -2,8 +2,8 @@ name: Deploy Angular to GitHub Pages
 
 on:
   push:
-   branches: 
-      - main  # ou master, dependendo do seu branch principal
+    branches: 
+      - main
 
 jobs:
   build-and-deploy:
@@ -13,15 +13,21 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-   - name: Instalar dependências
-     run: npm install
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+        cache: 'npm'
 
-   - name: Build com baseHref
-     run: npm run build
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build
+      run: npm run build -- --base-href=/CotacaoDolar/
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist/cotacao-dolar 
-		publish_branch: gh-pages
+        publish_dir: ./dist/cotacao-dolar
+        publish_branch: gh-pages
