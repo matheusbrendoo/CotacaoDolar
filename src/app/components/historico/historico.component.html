@@ -1,0 +1,52 @@
+<div class="historico">
+  <div class="buscarPorPeriodo">
+    <div class="formulario">
+      <label class="mr-3" for="dataInicial">Data inicial:</label>
+      <input
+        id="dataInicial"
+        type="date"
+        name="dataInicial"
+        #dataInicial
+        [value]="dataInicialString"
+        (change)="testeee($any($event.target).value)"
+      />
+
+      <label class="mr-3" for="dataFinal">Data final:</label>
+
+      <input
+        id="dataFinal"
+        type="date"
+        name="dataFinal"
+        #dataFinal
+        [value]="dataFinalString"
+      />
+
+      <label class="mr-3" for="flagOpcional">
+        <input
+          id="flagOpcional"
+          type="checkbox"
+          [(ngModel)]="flagOpcional"
+          name="flagOpcional"
+        />
+        Apenas cotações menores que a cotação atual
+      </label>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        class="btnPesquisar"
+        (click)="getCotacaoPorPeriodo(dataInicial.value, dataFinal.value)"
+      >
+        Pesquisar
+      </button>
+    </div>
+  </div>
+
+  <div class="mt-3">
+    <app-historicolist
+      *ngIf="cotacaoPorPeriodoLista.length > 0"
+      [cotacoes]="cotacaoPorPeriodoLista"
+    >
+    </app-historicolist>
+  </div>
+</div>

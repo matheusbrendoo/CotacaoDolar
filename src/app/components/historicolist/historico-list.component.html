@@ -1,0 +1,27 @@
+<div *ngIf="cotacoes && cotacoes.length > 0" class="relatorio-container">
+    <header class="relatorio-header">
+      <h2>Relatório de Cotações</h2>
+      <p>Período listado com {{ cotacoes.length }} registros</p>
+    </header>
+  
+    <table class="relatorio-tabela">
+      <thead>
+        <tr>
+          <th>DATA</th>
+          <th>VALOR</th>
+          <th>DIFERENÇA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cotacoes">
+          <td>{{ item.data }}</td>
+          <td>{{ item.preco | currency:'BRL':'symbol':'1.2-2'}}</td>
+          <td>{{ item.diferenca | currency:'BRL':'symbol':'1.2-2' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <footer class="relatorio-footer">
+      <p>Sistemas SHX | © {{ currentYear }}</p>
+    </footer>
+  </div>

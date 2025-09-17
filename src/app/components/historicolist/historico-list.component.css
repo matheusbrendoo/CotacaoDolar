@@ -1,0 +1,40 @@
+.relatorio-container {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+  
+  .relatorio-header,
+  .relatorio-footer {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .relatorio-header h2 {
+    margin: 0;
+  }
+  
+  .relatorio-tabela {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .relatorio-tabela th,
+  .relatorio-tabela td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .relatorio-tabela thead {
+    background-color: #f5f5f5;
+  }
+  
+  .relatorio-footer {
+    font-size: 12px;
+    color: #666;
+  }
+  

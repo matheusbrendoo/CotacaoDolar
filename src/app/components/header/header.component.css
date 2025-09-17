@@ -1,0 +1,31 @@
+header {
+    background-color: #1c5692;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    color: white;
+}
+
+.logo p {
+    font-size: 30px;
+    margin-top: 8px;
+
+
+}
+
+.name {
+    font-size: 30px;
+    margin-top: 5px;
+
+}
+
+.dolaratual {
+    font-size: 20px;
+    margin-top: 10px;
+}

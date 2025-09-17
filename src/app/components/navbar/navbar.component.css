@@ -1,0 +1,33 @@
+.navbar {
+    background-color: rgb(255, 255, 255);
+    color: #1c5692;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+}
+
+.navbar a {
+    background: none;
+    border: none;
+    font-size: 20px;
+    padding: 0px 20px;
+    color: #1c5692;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar a:hover  {
+    color: #e29e0c;
+}
+
+.navbar a:focus {
+    outline: none;
+}
+
+.active {
+    color: #e29e0c !important;
+}

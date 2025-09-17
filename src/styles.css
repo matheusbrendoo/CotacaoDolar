@@ -1,0 +1,50 @@
+/* Reset completo e base do layout */
+:root, html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Container principal */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Área de conteúdo expansível */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative; /* Importante para alguns casos */
+}
+
+/* Container do router-outlet */
+router-outlet + * {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Estilos para os componentes internos */
+.buscarPorPeriodo,
+.historico-container,
+.sobre-sistema {
+    flex: 1;
+    width: 100%;
+}
+
+/* Footer fixo */
+.footer {
+    background-color: #154c8e;
+    color: white;
+    padding: 10px 20px;
+    width: 100%;
+    flex-shrink: 0;
+}

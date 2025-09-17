@@ -1,0 +1,19 @@
+<header>
+
+    <div class="logo">
+      <p [routerLink]="'/home'" style="cursor: pointer;">HOME</p>
+
+    </div>
+    <div class="name">
+    <p>Sistema de Cotação do Dólar</p>
+    </div>
+
+    <div class="dolaratual">
+        <p>
+          Cotação do Dólar Atual:
+          <p>{{cotacaoAtual?.preco | currency:'BRL':'symbol':'1.2-2'}}</p>
+        </div>
+
+
+
+</header>

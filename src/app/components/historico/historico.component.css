@@ -1,0 +1,72 @@
+.formulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+h1 {
+    text-align: right;
+}
+
+.buscarPorPeriodo {
+    text-align: left;
+    background-color: #1c5692;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+.buscarPorPeriodo h1 {
+    text-align: left;
+}
+
+.buscarPorPeriodo label, button {
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.buscarPorPeriodo button {
+    background-color: #e29e0c;
+}
+
+.teste p {
+    text-align:right;
+    color: white;
+    font-size: 30px;
+    margin-right: 20px;
+    margin-top: 10px;
+
+}
+
+.errorAlert{
+    text-align: center;
+    color: red;
+}
+
+.mt-3 h1 {
+    text-align: center;
+}
+
+ul {
+    margin-left: 20%;
+    margin-right: 20%;
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: beige;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 25px;
+}
+
+li span {
+    font-size: 20px;
+    margin-right: 10%;
+    margin-left: 5%;
+}
