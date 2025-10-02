@@ -1,3 +1,4 @@
+/* header.component.css */
 header {
     background-color: #1c5692;
     top: 0;
@@ -15,17 +16,55 @@ header {
 .logo p {
     font-size: 30px;
     margin-top: 8px;
-
-
 }
 
 .name {
     font-size: 30px;
     margin-top: 5px;
-
 }
 
 .dolaratual {
     font-size: 20px;
     margin-top: 10px;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    header {
+        height: auto;
+        min-height: 60px;
+        flex-direction: column;
+        padding: 10px 15px;
+        gap: 8px;
+    }
+
+    .logo p {
+        font-size: 22px;
+        margin-top: 4px;
+    }
+
+    .name {
+        font-size: 20px;
+        margin-top: 0;
+    }
+
+    .dolaratual {
+        font-size: 16px;
+        margin-top: 0;
+    }
+}
+
+/* Mobile pequeno */
+@media screen and (max-width: 480px) {
+    .logo p {
+        font-size: 18px;
+    }
+
+    .name {
+        font-size: 16px;
+    }
+
+    .dolaratual {
+        font-size: 14px;
+    }
 }

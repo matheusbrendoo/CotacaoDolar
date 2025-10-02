@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+    overflow-x: hidden; /* Previne scroll horizontal */
 }
 
 /* Container principal */
@@ -13,6 +14,7 @@
     flex-direction: column;
     min-height: 100vh;
     width: 100%;
+    max-width: 100vw; /* Previne overflow */
 }
 
 /* Área de conteúdo expansível */
@@ -21,7 +23,9 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    position: relative; /* Importante para alguns casos */
+    position: relative;
+    padding: 16px; /* Espaçamento para mobile */
+    box-sizing: border-box;
 }
 
 /* Container do router-outlet */
@@ -30,6 +34,7 @@ router-outlet + * {
     display: flex;
     flex-direction: column;
     width: 100%;
+    box-sizing: border-box;
 }
 
 /* Estilos para os componentes internos */
@@ -38,13 +43,79 @@ router-outlet + * {
 .sobre-sistema {
     flex: 1;
     width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
 }
 
 /* Footer fixo */
 .footer {
     background-color: #154c8e;
     color: white;
-    padding: 10px 20px;
+    padding: 16px 20px;
     width: 100%;
     flex-shrink: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* Media queries para desktop */
+@media screen and (min-width: 768px) {
+    .main-content {
+        padding: 24px 32px;
+    }
+
+    .buscarPorPeriodo,
+    .historico-container,
+    .sobre-sistema {
+        padding: 20px;
+    }
+
+    .footer {
+        padding: 20px 40px;
+        font-size: 16px;
+    }
+}
+
+/* Media queries para telas grandes */
+@media screen and (min-width: 1200px) {
+    .main-content {
+        padding: 32px 48px;
+    }
+}
+
+/* Media queries para mobile pequeno */
+@media screen and (max-width: 480px) {
+    .main-content {
+        padding: 12px;
+    }
+
+    .buscarPorPeriodo,
+    .historico-container,
+    .sobre-sistema {
+        padding: 8px;
+    }
+
+    .footer {
+        padding: 12px 16px;
+        font-size: 12px;
+        text-align: center;
+    }
+}
+
+/* Garantir que elementos do Material não quebrem o layout */
+mat-toolbar,
+mat-sidenav-container,
+mat-card,
+mat-form-field {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Ajustes para tabelas em mobile */
+@media screen and (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
 }

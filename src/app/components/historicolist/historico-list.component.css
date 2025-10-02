@@ -1,3 +1,4 @@
+/* historico-list.component.css */
 .relatorio-container {
     background: #fff;
     border: 1px solid #ddd;
@@ -5,36 +6,121 @@
     padding: 20px;
     margin-top: 30px;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  }
-  
-  .relatorio-header,
-  .relatorio-footer {
+    box-sizing: border-box;
+    overflow-x: auto;
+}
+
+.relatorio-header,
+.relatorio-footer {
     text-align: center;
     margin-bottom: 20px;
-  }
-  
-  .relatorio-header h2 {
+}
+
+.relatorio-header h2 {
     margin: 0;
-  }
-  
-  .relatorio-tabela {
+}
+
+.relatorio-tabela {
     width: 100%;
     border-collapse: collapse;
-  }
-  
-  .relatorio-tabela th,
-  .relatorio-tabela td {
+    min-width: 500px; /* Garante scroll horizontal em telas pequenas */
+}
+
+.relatorio-tabela th,
+.relatorio-tabela td {
     border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
-  }
-  
-  .relatorio-tabela thead {
+}
+
+.relatorio-tabela thead {
     background-color: #f5f5f5;
-  }
-  
-  .relatorio-footer {
+}
+
+.relatorio-footer {
     font-size: 12px;
     color: #666;
-  }
-  
+}
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+    .relatorio-container {
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    .relatorio-tabela th,
+    .relatorio-tabela td {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    .relatorio-container {
+        padding: 10px;
+        margin-top: 15px;
+        border-radius: 8px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .relatorio-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .relatorio-tabela {
+        font-size: 13px;
+    }
+
+    .relatorio-tabela th,
+    .relatorio-tabela td {
+        padding: 6px 4px;
+        font-size: 12px;
+    }
+
+    .relatorio-footer {
+        font-size: 10px;
+    }
+}
+
+/* Mobile pequeno */
+@media screen and (max-width: 480px) {
+    .relatorio-container {
+        padding: 8px;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+
+    .relatorio-header h2 {
+        font-size: 1.1rem;
+    }
+
+    .relatorio-tabela {
+        font-size: 11px;
+    }
+
+    .relatorio-tabela th,
+    .relatorio-tabela td {
+        padding: 4px 2px;
+        font-size: 10px;
+    }
+}
+
+/* Scroll suave para tabela em mobile */
+@media screen and (max-width: 768px) {
+    .relatorio-container {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Indica visualmente que há scroll */
+    .relatorio-container::after {
+        content: "← Deslize para ver mais →";
+        display: block;
+        text-align: center;
+        font-size: 11px;
+        color: #999;
+        margin-top: 10px;
+    }
+}

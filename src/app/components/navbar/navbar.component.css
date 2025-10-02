@@ -1,3 +1,4 @@
+/* navbar.component.css */
 .navbar {
     background-color: rgb(255, 255, 255);
     color: #1c5692;
@@ -6,6 +7,7 @@
     justify-content: center;
     align-items: center;
     gap: 200px;
+    flex-wrap: wrap;
 }
 
 .navbar a {
@@ -18,9 +20,10 @@
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
+    text-decoration: none;
 }
 
-.navbar a:hover  {
+.navbar a:hover {
     color: #e29e0c;
 }
 
@@ -30,4 +33,42 @@
 
 .active {
     color: #e29e0c !important;
+}
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+    .navbar {
+        gap: 100px;
+    }
+
+    .navbar a {
+        font-size: 18px;
+        padding: 0px 15px;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    .navbar {
+        gap: 30px;
+        padding: 12px 10px;
+    }
+
+    .navbar a {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+}
+
+/* Mobile pequeno */
+@media screen and (max-width: 480px) {
+    .navbar {
+        gap: 15px;
+        padding: 10px 5px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
 }
