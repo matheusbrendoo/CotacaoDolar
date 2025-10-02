@@ -16,24 +16,46 @@ h1 {
     color: white;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    padding: 15px;
+    align-items: center;
+    padding: 20px;
     box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .buscarPorPeriodo h1 {
     text-align: left;
+    margin: 0;
+    flex-shrink: 0;
 }
 
-.buscarPorPeriodo label,
-.buscarPorPeriodo button {
-    margin-left: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.buscarPorPeriodo label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+
+.buscarPorPeriodo input[type="date"],
+.buscarPorPeriodo input[type="checkbox"] {
+    margin: 0 5px;
 }
 
 .buscarPorPeriodo button {
     background-color: #e29e0c;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0;
+}
+
+.buscarPorPeriodo button:hover {
+    background-color: #c88a0a;
 }
 
 .teste p {
@@ -47,6 +69,7 @@ h1 {
 .errorAlert {
     text-align: center;
     color: red;
+    margin: 20px;
 }
 
 .mt-3 h1 {
@@ -63,18 +86,24 @@ ul {
 li {
     background-color: beige;
     margin-bottom: 5px;
-    padding: 5px;
+    padding: 10px 15px;
     border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 li span {
     font-size: 20px;
-    margin-right: 10%;
-    margin-left: 5%;
 }
 
 /* Tablet */
 @media screen and (max-width: 1024px) {
+    .buscarPorPeriodo {
+        padding: 15px;
+        gap: 12px;
+    }
+
     ul {
         margin-left: 10%;
         margin-right: 10%;
@@ -91,26 +120,31 @@ li span {
     .buscarPorPeriodo {
         flex-direction: column;
         align-items: stretch;
-        padding: 10px;
+        padding: 15px;
+        gap: 15px;
     }
 
     .buscarPorPeriodo h1 {
         font-size: 1.5rem;
         text-align: center;
-        margin: 10px 0;
     }
 
-    .buscarPorPeriodo label,
-    .buscarPorPeriodo button {
-        margin-left: 10px;
-        margin-right: 10px;
-        margin-top: 8px;
-        margin-bottom: 8px;
-        width: calc(100% - 20px);
+    .buscarPorPeriodo label {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 5px;
+    }
+
+    .buscarPorPeriodo input[type="date"] {
+        width: 100%;
+        padding: 8px;
+        font-size: 16px;
     }
 
     .buscarPorPeriodo button {
-        padding: 10px;
+        width: 100%;
+        padding: 12px;
         font-size: 16px;
     }
 
@@ -126,30 +160,33 @@ li span {
     }
 
     li {
-        padding: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px;
         border-radius: 15px;
+        gap: 5px;
     }
 
     li span {
         font-size: 16px;
-        margin-right: 5%;
-        margin-left: 3%;
-        display: block;
-        margin-bottom: 5px;
+        width: 100%;
     }
 }
 
 /* Mobile pequeno */
 @media screen and (max-width: 480px) {
+    .buscarPorPeriodo {
+        padding: 12px;
+        gap: 12px;
+    }
+
     .buscarPorPeriodo h1 {
         font-size: 1.3rem;
     }
 
-    .buscarPorPeriodo label,
     .buscarPorPeriodo button {
-        margin-left: 5px;
-        margin-right: 5px;
-        width: calc(100% - 10px);
+        padding: 10px;
+        font-size: 14px;
     }
 
     .teste p {
