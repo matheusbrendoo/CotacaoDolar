@@ -83,3 +83,10 @@ mat-toolbar, mat-sidenav-container, mat-card, mat-form-field {
   max-width: 100%;
   box-sizing: border-box;
 }
+
+@media (max-width: 600px) {
+  .footer {
+    font-size: 11px;
+    padding: 12px 14px;
+  }
+}
