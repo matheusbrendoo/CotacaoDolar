@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgChartsModule } from 'ng2-charts';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -23,7 +24,8 @@ import { SobreComponent } from './pages/sobre/sobre.component';
     FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    CommonModule
+    CommonModule,
+    NgChartsModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent],

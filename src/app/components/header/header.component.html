@@ -1,19 +1,22 @@
-<header>
-
-    <div class="logo">
-      <p [routerLink]="'/home'" style="cursor: pointer;">HOME</p>
-
+<header class="app-header">
+  <div class="header-brand" [routerLink]="'/home'" role="button" tabindex="0">
+    <div class="brand-icon">$</div>
+    <div class="brand-text">
+      <span class="brand-name">Cotação Dólar</span>
+      <span class="brand-sub">Tempo Real</span>
     </div>
-    <div class="name">
-    <p>Sistema de Cotação do Dólar</p>
+  </div>
+
+  <div class="header-rate">
+    <div class="rate-label">
+      <span class="live-dot"></span>
+      Cotação Atual
     </div>
-
-    <div class="dolaratual">
-        <p>
-          Cotação do Dólar Atual:
-          <p>{{cotacaoAtual?.preco | currency:'BRL':'symbol':'1.2-2'}}</p>
-        </div>
-
-
-
+    <div class="rate-value" *ngIf="cotacaoAtual; else loading">
+      {{ cotacaoAtual.preco | currency:'BRL':'symbol':'1.2-2' }}
+    </div>
+    <ng-template #loading>
+      <div class="rate-loading">Carregando...</div>
+    </ng-template>
+  </div>
 </header>

@@ -1,103 +1,85 @@
-/* Reset completo e base do layout */
-:root, html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-    overflow-x: hidden;
+:root {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --border: #334155;
+  --border-light: #475569;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --cyan: #06b6d4;
 }
 
-/* Container principal */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Roboto', 'Helvetica Neue', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
 .app-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    width: 100%;
-    max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Área de conteúdo expansível */
 .main-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    position: relative;
-    box-sizing: border-box;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-/* Container do router-outlet */
 router-outlet + * {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    box-sizing: border-box;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-/* Estilos para os componentes internos */
-.buscarPorPeriodo,
-.historico-container,
-.sobre-sistema {
-    flex: 1;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* Footer fixo */
 .footer {
-    background-color: #154c8e;
-    color: white;
-    padding: 16px 20px;
-    width: 100%;
-    flex-shrink: 0;
-    box-sizing: border-box;
-    font-size: 14px;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 18px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  flex-shrink: 0;
 }
 
-/* Media queries para desktop */
-@media screen and (min-width: 768px) {
-    .main-content {
-        padding: 0;
-    }
-
-    .footer {
-        padding: 20px 40px;
-        font-size: 16px;
-    }
+.footer-version {
+  font-size: 11px;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  color: var(--accent);
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-weight: 500;
 }
 
-/* Media queries para telas grandes */
-@media screen and (min-width: 1200px) {
-    .main-content {
-        padding: 0;
-    }
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    padding: 14px 16px;
+  }
 }
 
-/* Media queries para mobile pequeno */
-@media screen and (max-width: 480px) {
-    .footer {
-        padding: 12px 16px;
-        font-size: 12px;
-        text-align: center;
-    }
-}
-
-/* Garantir que elementos do Material não quebrem o layout */
-mat-toolbar,
-mat-sidenav-container,
-mat-card,
-mat-form-field {
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-/* Ajustes para tabelas em mobile */
-@media screen and (max-width: 768px) {
-    table {
-        display: block;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
+mat-toolbar, mat-sidenav-container, mat-card, mat-form-field {
+  max-width: 100%;
+  box-sizing: border-box;
 }

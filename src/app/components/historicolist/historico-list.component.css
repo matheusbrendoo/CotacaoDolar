@@ -1,126 +1,212 @@
-/* historico-list.component.css */
-.relatorio-container {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    margin-top: 30px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    box-sizing: border-box;
-    overflow-x: auto;
+.results-container {
+  width: 100%;
 }
 
-.relatorio-header,
-.relatorio-footer {
-    text-align: center;
-    margin-bottom: 20px;
+.results-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
-.relatorio-header h2 {
-    margin: 0;
+.results-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #f1f5f9;
 }
 
-.relatorio-tabela {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 500px; /* Garante scroll horizontal em telas pequenas */
+.count-badge {
+  background: rgba(59, 130, 246, 0.12);
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: 20px;
+  padding: 3px 12px;
+  font-size: 12px;
+  font-weight: 600;
 }
 
-.relatorio-tabela th,
-.relatorio-tabela td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
+/* Stats */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
 }
 
-.relatorio-tabela thead {
-    background-color: #f5f5f5;
+.stat-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.relatorio-footer {
-    font-size: 12px;
-    color: #666;
+.stat-label {
+  font-size: 11px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 600;
 }
 
-/* Tablet */
-@media screen and (max-width: 1024px) {
-    .relatorio-container {
-        padding: 15px;
-        margin-top: 20px;
-    }
-
-    .relatorio-tabela th,
-    .relatorio-tabela td {
-        padding: 8px;
-        font-size: 14px;
-    }
+.stat-value {
+  font-size: 22px;
+  font-weight: 800;
+  color: #f1f5f9;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
 }
 
-/* Mobile */
-@media screen and (max-width: 768px) {
-    .relatorio-container {
-        padding: 10px;
-        margin-top: 15px;
-        border-radius: 8px;
-        margin-left: 5px;
-        margin-right: 5px;
-    }
+.stat-value.success { color: #22c55e; }
+.stat-value.danger  { color: #ef4444; }
 
-    .relatorio-header h2 {
-        font-size: 1.3rem;
-    }
-
-    .relatorio-tabela {
-        font-size: 13px;
-    }
-
-    .relatorio-tabela th,
-    .relatorio-tabela td {
-        padding: 6px 4px;
-        font-size: 12px;
-    }
-
-    .relatorio-footer {
-        font-size: 10px;
-    }
+/* Chart */
+.chart-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
 }
 
-/* Mobile pequeno */
-@media screen and (max-width: 480px) {
-    .relatorio-container {
-        padding: 8px;
-        margin-left: 2px;
-        margin-right: 2px;
-    }
-
-    .relatorio-header h2 {
-        font-size: 1.1rem;
-    }
-
-    .relatorio-tabela {
-        font-size: 11px;
-    }
-
-    .relatorio-tabela th,
-    .relatorio-tabela td {
-        padding: 4px 2px;
-        font-size: 10px;
-    }
+.chart-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 20px;
 }
 
-/* Scroll suave para tabela em mobile */
-@media screen and (max-width: 768px) {
-    .relatorio-container {
-        -webkit-overflow-scrolling: touch;
-    }
+.chart-title .material-icons {
+  color: #3b82f6;
+  font-size: 20px;
+}
 
-    /* Indica visualmente que há scroll */
-    .relatorio-container::after {
-        content: "← Deslize para ver mais →";
-        display: block;
-        text-align: center;
-        font-size: 11px;
-        color: #999;
-        margin-top: 10px;
-    }
+.chart-wrapper {
+  height: 280px;
+  position: relative;
+}
+
+/* Table */
+.table-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 480px;
+}
+
+thead {
+  background: #0f172a;
+}
+
+th {
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  border-bottom: 1px solid #334155;
+}
+
+td {
+  padding: 13px 16px;
+  font-size: 14px;
+  color: #cbd5e1;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+}
+
+tbody tr {
+  transition: background 0.15s;
+}
+
+tbody tr:hover {
+  background: rgba(51, 65, 85, 0.35);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.date-cell {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.value-cell {
+  font-weight: 700;
+  color: #f1f5f9;
+  font-variant-numeric: tabular-nums;
+}
+
+.diff-cell {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: #94a3b8;
+}
+
+.diff-success { color: #22c55e; }
+.diff-danger  { color: #ef4444; }
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  background: rgba(148, 163, 184, 0.1);
+  color: #94a3b8;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.badge-success {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+.badge-danger {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.table-footer {
+  padding: 12px 16px;
+  font-size: 12px;
+  color: #475569;
+  border-top: 1px solid #334155;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .stats-grid { gap: 10px; }
+  .stat-card { padding: 14px; }
+  .stat-value { font-size: 18px; }
+  .chart-wrapper { height: 220px; }
+  .chart-card { padding: 16px; }
+}
+
+@media (max-width: 480px) {
+  .stats-grid { grid-template-columns: 1fr; }
+  .chart-wrapper { height: 180px; }
 }

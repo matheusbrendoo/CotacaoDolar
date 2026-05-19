@@ -1,27 +1,72 @@
-<div *ngIf="cotacoes && cotacoes.length > 0" class="relatorio-container">
-    <header class="relatorio-header">
-      <h2>Relatório de Cotações</h2>
-      <p>Período listado com {{ cotacoes.length }} registros</p>
-    </header>
-  
-    <table class="relatorio-tabela">
-      <thead>
-        <tr>
-          <th>DATA</th>
-          <th>VALOR</th>
-          <th>DIFERENÇA</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of cotacoes">
-          <td>{{ item.data }}</td>
-          <td>{{ item.preco | currency:'BRL':'symbol':'1.2-2'}}</td>
-          <td>{{ item.diferenca | currency:'BRL':'symbol':'1.2-2' }}</td>
-        </tr>
-      </tbody>
-    </table>
-  
-    <footer class="relatorio-footer">
-      <p>Sistemas SHX | © {{ currentYear }}</p>
-    </footer>
+<div class="results-container" *ngIf="cotacoes && cotacoes.length > 0">
+
+  <div class="results-header">
+    <h2>Relatório de Cotações</h2>
+    <span class="count-badge">{{ cotacoes.length }} registros</span>
   </div>
+
+  <!-- Stats -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <span class="stat-label">Mínimo do Período</span>
+      <span class="stat-value success">{{ minPreco | currency:'BRL':'symbol':'1.2-2' }}</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">Máximo do Período</span>
+      <span class="stat-value danger">{{ maxPreco | currency:'BRL':'symbol':'1.2-2' }}</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">Média do Período</span>
+      <span class="stat-value">{{ avgPreco | currency:'BRL':'symbol':'1.2-2' }}</span>
+    </div>
+  </div>
+
+  <!-- Chart -->
+  <div class="chart-card">
+    <div class="chart-title">
+      <span class="material-icons">show_chart</span>
+      Evolução do Período
+    </div>
+    <div class="chart-wrapper">
+      <canvas baseChart
+        [data]="chartData"
+        [options]="chartOptions"
+        [type]="chartType">
+      </canvas>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="table-card">
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>DATA</th>
+            <th>VALOR</th>
+            <th>DIFERENÇA</th>
+            <th>STATUS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cotacoes">
+            <td class="date-cell">{{ item.data }}</td>
+            <td class="value-cell">{{ item.preco | currency:'BRL':'symbol':'1.2-2' }}</td>
+            <td [class]="'diff-cell diff-' + diferencaClass(item.diferenca)">
+              {{ item.diferenca | currency:'BRL':'symbol':'1.2-2' }}
+            </td>
+            <td>
+              <span class="badge" [class]="'badge-' + diferencaClass(item.diferenca)">
+                {{ statusText(item.diferenca) }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table-footer">
+      <span>Desenvolvido por Matheus Brendo &copy; {{ currentYear }}</span>
+    </div>
+  </div>
+
+</div>

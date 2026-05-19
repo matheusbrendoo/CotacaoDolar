@@ -1,5 +1,38 @@
-<div class="home-card">
-  <h2>Bem-vindo!</h2>
-  <p>Este sistema permite consultar e visualizar a cotação atual e o histórico do dólar.</p>
-  <p>Use o menu acima para navegar entre as seções.</p>
+<div class="home-page">
+  <div class="hero">
+    <div class="hero-badge">
+      <span class="live-dot"></span>
+      Dados em Tempo Real
+    </div>
+    <h1>Acompanhe a cotação<br><span class="gradient-text">do dólar</span></h1>
+    <p>Pesquise o histórico completo de cotações, identifique os melhores momentos para compra e visualize a evolução dos preços com gráficos interativos.</p>
+    <a routerLink="/historico" class="cta-button">
+      <span class="material-icons">search</span>
+      Pesquisar Histórico
+    </a>
+  </div>
+
+  <div class="features">
+    <div class="feature-card">
+      <div class="feature-icon blue">
+        <span class="material-icons">bolt</span>
+      </div>
+      <h3>Cotação em Tempo Real</h3>
+      <p>Veja instantaneamente o valor atual do dólar, atualizado diretamente da API a cada acesso.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon cyan">
+        <span class="material-icons">history</span>
+      </div>
+      <h3>Histórico de Preços</h3>
+      <p>Consulte cotações por período e filtre apenas os dias em que o dólar estava mais barato que o preço atual.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon green">
+        <span class="material-icons">show_chart</span>
+      </div>
+      <h3>Análise Visual</h3>
+      <p>Gráfico interativo com a evolução do dólar no período pesquisado, facilitando a identificação de tendências.</p>
+    </div>
+  </div>
 </div>

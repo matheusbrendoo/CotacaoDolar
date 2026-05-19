@@ -1,9 +1,20 @@
-<div class="navbar">
-
-    <a routerLink="/historico" routerLinkActive="active">Histórico</a>
-    <a routerLink="/sobre" routerLinkActive="active">Sobre</a>
-    <a (click)="openSHXSite()">Portfólio</a>
+<nav class="navbar">
+  <div class="nav-links">
+    <a routerLink="/home" routerLinkActive="active">
+      <span class="material-icons nav-icon">home</span>
+      Home
+    </a>
+    <a routerLink="/historico" routerLinkActive="active">
+      <span class="material-icons nav-icon">history</span>
+      Histórico
+    </a>
+    <a routerLink="/sobre" routerLinkActive="active">
+      <span class="material-icons nav-icon">info</span>
+      Sobre
+    </a>
+    <a class="portfolio-link" (click)="openSHXSite()">
+      <span class="material-icons nav-icon">open_in_new</span>
+      Portfólio
+    </a>
   </div>
-
-
-
+</nav>

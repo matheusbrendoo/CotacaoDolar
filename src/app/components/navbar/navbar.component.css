@@ -1,74 +1,64 @@
-/* navbar.component.css */
 .navbar {
-    background-color: rgb(255, 255, 255);
-    color: #1c5692;
-    padding: 15px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 200px;
-    flex-wrap: wrap;
+  background-color: #1e293b;
+  border-bottom: 1px solid #334155;
+  padding: 0 32px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2px;
 }
 
 .navbar a {
-    background: none;
-    border: none;
-    font-size: 20px;
-    padding: 0px 20px;
-    color: #1c5692;
-    font-family: inherit;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 16px;
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
 }
 
 .navbar a:hover {
-    color: #e29e0c;
+  color: #f1f5f9;
 }
 
-.navbar a:focus {
-    outline: none;
+.navbar a.active {
+  color: #3b82f6;
+  border-bottom-color: #3b82f6;
 }
 
-.active {
-    color: #e29e0c !important;
+.nav-icon {
+  font-size: 18px;
 }
 
-/* Tablet */
-@media screen and (max-width: 1024px) {
-    .navbar {
-        gap: 100px;
-    }
-
-    .navbar a {
-        font-size: 18px;
-        padding: 0px 15px;
-    }
+.portfolio-link {
+  margin-left: auto;
 }
 
-/* Mobile */
-@media screen and (max-width: 768px) {
-    .navbar {
-        gap: 30px;
-        padding: 12px 10px;
-    }
+@media (max-width: 768px) {
+  .navbar { padding: 0 8px; }
 
-    .navbar a {
-        font-size: 16px;
-        padding: 8px 12px;
-    }
+  .navbar a {
+    padding: 12px 10px;
+    font-size: 13px;
+    gap: 4px;
+  }
+
+  .nav-icon { font-size: 16px; }
 }
 
-/* Mobile pequeno */
-@media screen and (max-width: 480px) {
-    .navbar {
-        gap: 15px;
-        padding: 10px 5px;
-    }
+@media (max-width: 480px) {
+  .navbar a {
+    padding: 10px 8px;
+    font-size: 12px;
+  }
 
-    .navbar a {
-        font-size: 14px;
-        padding: 6px 10px;
-    }
+  .nav-icon { display: none; }
 }
